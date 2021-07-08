@@ -1,7 +1,7 @@
 package com.example.loginapi.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 
@@ -17,6 +17,7 @@ public class RegistrationController {
 	private RegistrationService service;
 	
 	@PostMapping("/registeruser")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public User registerUser(@RequestBody User user) throws Exception {
 		String tempEmailId = user.getEmailId();
 		if(tempEmailId != null && "".equals(tempEmailId)) {
@@ -31,6 +32,7 @@ public class RegistrationController {
 	}
 	
 	@PostMapping("/login")
+	@CrossOrigin(origins = "http://localhost:4200")
 	public User loginUser(@RequestBody User user) throws Exception {
 		
 		String tempEmailId = user.getEmailId();
