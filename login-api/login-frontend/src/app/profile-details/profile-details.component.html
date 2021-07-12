@@ -1,0 +1,46 @@
+<nav class="navbar navbar-expand-sm bg-primary navbar-dark">
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a [routerLink]="['/add']" class="nav-link" routerLinkActive="active"
+        >Update Profile</a
+      >
+    </li>
+    <li class="nav-item">
+      <a [routerLink]="['/details']" class="nav-link" routerLinkActive="active"
+        >View Profile</a
+      >
+    </li>
+  </ul>
+</nav>
+<router-outlet></router-outlet>
+<div class="style">
+  <div *ngIf="profile" class="form-style">
+    <h2>View Profile</h2>
+    <div>
+      <label for="firstName"
+        ><b>First Name : </b> {{ profile.firstName }}</label
+      >
+    </div>
+    <div>
+      <label for="lastName"><b>Last Name : </b> {{ profile.lastName }}</label>
+    </div>
+    <div>
+      <label for="mobileNumber"
+        ><b>Mobile Number : </b> {{ profile.mobileNumber }}</label
+      >
+    </div>
+    <div>
+      <label for="address"><b>Address : </b> {{ profile.address }}</label>
+    </div>
+    <div>
+      <label for="city"><b>City : </b> {{ profile.city }}</label>
+    </div>
+    <div>
+      <label for="state"><b>State : </b> {{ profile.state }}</label>
+    </div>
+    <div>
+      <label for="country"><b>Country : </b> {{ profile.country }}</label>
+    </div>
+  </div>
+</div>
